@@ -1,0 +1,19 @@
+pipeline {
+agent any
+    parameters {
+        string(name:'name', defaultValue:' ', description:'please provide directory name')
+choice(name:'hometown', choices: ['hyd','guntur','vijayawada'], description:'please select your hometown')
+    }
+    stages {
+    stage('your name') {
+                steps {
+           sh 'echo ${name}'
+                }
+            }         
+            stage('your hometown'){
+steps{
+sh 'echo ${hometown}'
+        }
+    }
+}
+}
